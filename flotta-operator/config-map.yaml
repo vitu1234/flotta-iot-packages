@@ -1,0 +1,32 @@
+apiVersion: v1
+data:
+  DB_HOST: '''10.96.23.17'''
+  DB_NAME: flottadb
+  DB_PASSWORD: flotta
+  DB_PORT: '''5432'''
+  DB_SSL_MODE: disable
+  DB_USER: postgres
+  LOG_LEVEL: info
+  METRICS_ADDR: :8080
+  PROBE_ADDR: :8081
+kind: ConfigMap
+metadata:
+  name: flotta-edge-api-config
+  namespace: flotta
+---
+apiVersion: v1
+data:
+  AUTO_APPROVAL_PROCESS: "true"
+  EDGEWORKLOAD_CONCURRENCY: "5"
+  ENABLE_WEBHOOKS: "true"
+  LEADER_ELECT: "false"
+  LOG_LEVEL: info
+  MAX_CONCURRENT_RECONCILES: "3"
+  METRICS_ADDR: :8080
+  OBC_AUTO_CREATE: "false"
+  PROBE_ADDR: :8081
+  WEBHOOK_PORT: "9443"
+kind: ConfigMap
+metadata:
+  name: flotta-manager-config
+  namespace: flotta
