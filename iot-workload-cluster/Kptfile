@@ -4,7 +4,7 @@ metadata: # kpt-merge: /iot-workload-cluster
   name: iot-workload-cluster
   annotations:
     config.kubernetes.io/local-config: "true"
-    internal.kpt.dev/upstream-identifier: 'kpt.dev|Kptfile|default|iot-workload-cluster'
+    internal.kpt.dev/upstream-identifier: kpt.dev|Kptfile|default|iot-workload-cluster
 upstream:
   type: git
   git:
@@ -19,7 +19,7 @@ upstreamLock:
     ref: nephio-workload-cluster/v9
     commit: aff10318c3827de0e7a18844051adae53491f455
 info:
-  description: nephio workload cluster package
+  description: IoT workload cluster package
 pipeline:
   mutators:
   - image: gcr.io/kpt-fn/apply-replacements:v0.1.1
