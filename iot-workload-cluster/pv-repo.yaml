@@ -1,0 +1,24 @@
+apiVersion: config.porch.kpt.dev/v1alpha1
+kind: PackageVariant
+metadata: # kpt-merge: /example-repo
+  name: iot-workload-cluster-workload-cluster-repo
+  annotations:
+    internal.kpt.dev/upstream-identifier: 'config.porch.kpt.dev|PackageVariant|default|example-repo'
+spec:
+  annotations:
+    approval.nephio.org/policy: initial
+  upstream:
+    package: repository
+    repo: nephio-example-packages
+    revision: v3
+  downstream:
+    package: iot-workload-cluster-workload-cluster-repo
+    repo: mgmt
+  injectors:
+  - kind: WorkloadCluster
+    name: iot-workload-cluster
+  pipeline:
+    mutators:
+    - image: gcr.io/kpt-fn/set-annotations:v0.1.4
+      configMap:
+        nephio.org/cluster-name: iot-workload-cluster
