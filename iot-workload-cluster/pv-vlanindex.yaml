@@ -1,7 +1,7 @@
 apiVersion: config.porch.kpt.dev/v1alpha1
 kind: PackageVariant
 metadata: # kpt-merge: /example-vlanindex
-  name: iot-workload-cluster-vlanindex
+  name: iot-workload-cluster-workload-cluster-vlanindex
   annotations:
     internal.kpt.dev/upstream-identifier: 'config.porch.kpt.dev|PackageVariant|default|example-vlanindex'
 spec:
@@ -12,7 +12,7 @@ spec:
     repo: nephio-example-packages
     revision: v1
   downstream:
-    package: iot-workload-cluster-vlanindex
+    package: iot-workload-cluster-workload-cluster-vlanindex
     repo: mgmt
   injectors:
   - kind: WorkloadCluster
