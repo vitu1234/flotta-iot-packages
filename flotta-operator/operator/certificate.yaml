@@ -1,0 +1,21 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: flotta-webhook-cert
+  namespace: flotta
+spec:
+  dnsNames:
+  - flotta-webhook-service.flotta.svc
+  - flotta-webhook-service.flotta.svc.cluster.local
+  issuerRef:
+    kind: Issuer
+    name: flotta-issuer
+  secretName: webhook-server-cert
+---
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: flotta-issuer
+  namespace: flotta
+spec:
+  selfSigned: {}
