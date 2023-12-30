@@ -1,0 +1,25 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata: # kpt-merge: flotta/flotta-webhook-cert
+  name: flotta-webhook-cert
+  namespace: flotta
+  annotations:
+    internal.kpt.dev/upstream-identifier: 'cert-manager.io|Certificate|flotta|flotta-webhook-cert'
+spec:
+  dnsNames:
+  - flotta-webhook-service.flotta.svc
+  - flotta-webhook-service.flotta.svc.cluster.local
+  issuerRef:
+    kind: Issuer
+    name: flotta-issuer
+  secretName: webhook-server-cert
+---
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata: # kpt-merge: flotta/flotta-issuer
+  name: flotta-issuer
+  namespace: flotta
+  annotations:
+    internal.kpt.dev/upstream-identifier: 'cert-manager.io|Issuer|flotta|flotta-issuer'
+spec:
+  selfSigned: {}
