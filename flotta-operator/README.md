@@ -17,5 +17,5 @@ Details: https://kpt.dev/reference/cli/pkg/tree/
 ```
 kpt live init flotta-operator
 kpt live apply flotta-operator --reconcile-timeout=2m --output=table
-```
+``` 
 Details: https://kpt.dev/reference/cli/live/
