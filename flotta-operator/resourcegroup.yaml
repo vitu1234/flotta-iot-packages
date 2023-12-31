@@ -1,0 +1,7 @@
+apiVersion: kpt.dev/v1alpha1
+kind: ResourceGroup
+metadata:
+  name: inventory-55616308
+  namespace: flotta
+  labels:
+    cli-utils.sigs.k8s.io/inventory-id: dfe4b198733f95ac1d78d395772466ca1a390b4c-1703960270490780398
