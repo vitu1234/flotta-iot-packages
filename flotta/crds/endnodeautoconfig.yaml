@@ -1,9 +1,8 @@
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
-metadata: # kpt-merge: /endnodeautoconfigs.management.project-flotta.io
+metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.4.1
-    internal.kpt.dev/upstream-identifier: 'apiextensions.k8s.io|CustomResourceDefinition|default|endnodeautoconfigs.management.project-flotta.io'
   creationTimestamp: null
   name: endnodeautoconfigs.management.project-flotta.io
 spec:
@@ -21,10 +20,14 @@ spec:
         description: EndNodeAutoConfig is the Schema for the endnodeautoconfigs API
         properties:
           apiVersion:
-            description: 'APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
             type: string
           kind:
-            description: 'Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
             type: string
           metadata:
             type: object
@@ -73,7 +76,9 @@ spec:
             description: EndNodeAutoConfigStatus defines the observed state of EndNodeAutoConfig
             properties:
               condition:
-                description: 'INSERT ADDITIONAL STATUS FIELD - define observed state of cluster Important: Run "make" to regenerate code after modifying this file'
+                description: 'INSERT ADDITIONAL STATUS FIELD - define observed state
+                  of cluster Important: Run "make" to regenerate code after modifying
+                  this file'
                 items:
                   properties:
                     lastTransitionTime:
@@ -82,7 +87,8 @@ spec:
                     message:
                       type: string
                     status:
-                      description: The absence of a condition should be interpreted the same as Unknown
+                      description: The absence of a condition should be interpreted
+                        the same as Unknown
                       type: string
                   required:
                   - status

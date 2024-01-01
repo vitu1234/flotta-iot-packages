@@ -1,0 +1,15 @@
+apiVersion: v1
+data:
+  DB_HOST: '''10.96.23.17'''
+  DB_NAME: flottadb
+  DB_PASSWORD: flotta
+  DB_PORT: '''5432'''
+  DB_SSL_MODE: disable
+  DB_USER: postgres
+  LOG_LEVEL: info
+  METRICS_ADDR: :8080
+  PROBE_ADDR: :8081
+kind: ConfigMap
+metadata:
+  name: flotta-edge-api-config
+  namespace: flotta

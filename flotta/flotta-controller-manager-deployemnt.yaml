@@ -1,12 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata: # kpt-merge: flotta/flotta-controller-manager
+metadata:
   labels:
     app: flotta-controller-manager
   name: flotta-controller-manager
   namespace: flotta
-  annotations:
-    internal.kpt.dev/upstream-identifier: 'apps|Deployment|flotta|flotta-controller-manager'
 spec:
   replicas: 1
   selector:

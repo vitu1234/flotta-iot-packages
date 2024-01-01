@@ -1,12 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata: # kpt-merge: flotta/flotta-edge-api
+metadata:
   labels:
     app: flotta-edge-api
   name: flotta-edge-api
   namespace: flotta
-  annotations:
-    internal.kpt.dev/upstream-identifier: 'apps|Deployment|flotta|flotta-edge-api'
 spec:
   replicas: 1
   selector:
