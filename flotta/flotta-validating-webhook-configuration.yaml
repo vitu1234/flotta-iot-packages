@@ -1,30 +1,8 @@
-apiVersion: route.openshift.io/v1
-kind: Route
-metadata: # kpt-merge: flotta/flotta-edge-api
-  labels:
-    app: flotta-edge-api
-  name: flotta-edge-api
-  namespace: flotta
-  annotations:
-    internal.kpt.dev/upstream-identifier: 'route.openshift.io|Route|flotta|flotta-edge-api'
-spec:
-  host: project-flotta.io
-  port:
-    targetPort: yggds
-  tls:
-    termination: passthrough
-  to:
-    kind: Service
-    name: flotta-edge-api
-    weight: 100
-  wildcardPolicy: None
----
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingWebhookConfiguration
-metadata: # kpt-merge: /flotta-validating-webhook-configuration
+metadata:
   annotations:
     cert-manager.io/inject-ca-from: flotta/flotta-webhook-cert
-    internal.kpt.dev/upstream-identifier: 'admissionregistration.k8s.io|ValidatingWebhookConfiguration|default|flotta-validating-webhook-configuration'
   name: flotta-validating-webhook-configuration
 webhooks:
 - admissionReviewVersions:

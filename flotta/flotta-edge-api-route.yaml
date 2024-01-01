@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  labels:
+    app: flotta-edge-api
+  name: flotta-edge-api
+  namespace: flotta
+spec:
+  host: project-flotta.io
+  port:
+    targetPort: yggds
+  tls:
+    termination: passthrough
+  to:
+    kind: Service
+    name: flotta-edge-api
+    weight: 100
+  wildcardPolicy: None

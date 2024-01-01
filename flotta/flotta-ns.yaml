@@ -4,5 +4,4 @@ metadata:
   labels:
     app: flotta-controller-manager
     openshift.io/cluster-monitoring: "true"
-    pod-security.kubernetes.io/enforce: privileged
   name: flotta
